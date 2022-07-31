@@ -4,11 +4,43 @@ function getComputerChoice() {
     let random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
+
 function playRound(playerSelection, computerSelection) {
-            
-            
-            // Plays a single round and takes two parameters and returns a string that declares the winner of the round like so: "You Lose! Paper beats Rock". playerSelection should be case sensitive so any variation can be accepted e.g ROCK Rock rock RoCk etc.
+    playerSelection = playerSelection.toUpperCase(); 
+    computerSelection = getComputerChoice.toUpperCase();
+    let loser = "You Lose!" + " " + computerSelection + " " + "beats" + playerSelection;
+    let winner = "You Win!" + " " + playerSelection + " " + "beats" + computerSelection;
+    let draw = "Draw! No Winner;"
+    if (playerSelection === 'ROCK' && computerSelection === 'PAPER') {
+        return loser;
+    }   else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
+            return winner;
+    }   else if (playerSelection === 'ROCK' && computerSelection === 'ROCK') {
+            return draw;
+    }    else {
+            return "Something went wrong";
+        }
+    if (playerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
+        return loser;
+    }   else if (playerSelection === 'PAPER' && computerSelection === 'ROCK') {
+            return winner;
+    }   else if (playerSelection === 'PAPER' && computerSelection === 'PAPER') {
+            return draw;
+    }   else {
+            return "Something went wrong";
+        }
+
+    if (playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+        return loser;
+    }    else if (playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+            return winner;
+    }    else if (playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') {
+            return draw;
+    }    else {
+            return "Something went wrong";
+        }
 }
+
 function game() {
             // this calls playRound function to play a 5 round game that keeps score and reports a winner or loser at the end. Utilise loops.
 }
