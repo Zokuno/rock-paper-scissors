@@ -4,6 +4,15 @@ function getComputerChoice() {
     return choices[random];
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
+function currentScore(playerScore, computerScore) {
+    playerScore = playerScore;
+    computerScore = computerScore;
+    console.log("Score =" + " " + "Player =" + " " + playerScore + " " + "||" + " " + "Computer =" + " " + computerScore);
+} 
+
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("Rock, Paper, or Scissors?").toUpperCase();
     computerSelection = getComputerChoice();
@@ -13,20 +22,36 @@ function playRound(playerSelection, computerSelection) {
     let winner = "You Win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
     let draw = "Draw! No Winner";
     if (playerSelection === 'ROCK' && computerSelection === 'PAPER' || playerSelection === 'PAPER' && computerSelection === 'SCISSORS' || playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-        return loser;
+        computerScore++;
+        console.log(loser);
     }   else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' || playerSelection === 'PAPER' && computerSelection === 'ROCK' || playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-        return winner;
+        playerScore++;
+        console.log(winner);
     }   else if (playerSelection === 'ROCK' && computerSelection === 'ROCK' || playerSelection === 'PAPER' && computerSelection === 'PAPER' || playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') { 
-        return draw
+        console.log(draw);
     }   else  {
-        return "Please type 'Rock', 'Paper', or 'Scissors'";
+        console.log("No Contest! Please type 'Rock', 'Paper', or 'Scissors'");
     }
 }
+
 function game() {
     for (let i = 0; i < 5; i++) {
-        i = playRound();
+        console.log(playRound());
+        console.log("Player Score = " + playerScore);
+        console.log("Computer Score = " + computerScore);
     }      
 }
 
-// console.log(playRound());
+function finalTally() {
+    if (playerScore > computerScore) {
+        console.log("You win~!~!~!");
+    }   else if (playerScore < computerScore){
+        console.log("You lost :(:(:(");
+    }   else {
+        console.log("Draw?!?!?!?!")
+    }
+}
+
 console.log(game());
+console.log(currentScore());
+console.log(finalTally());
