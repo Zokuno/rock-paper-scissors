@@ -1,3 +1,4 @@
+// Generates either Rock, Paper, or Scissors at random
 function getComputerChoice() {
     const choices = ['ROCK', 'PAPER', 'SCISSORS'];
     let random = Math.floor(Math.random() * choices.length);
@@ -7,12 +8,7 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-function currentScore(playerScore, computerScore) {
-    playerScore = playerScore;
-    computerScore = computerScore;
-    console.log("Score =" + " " + "Player =" + " " + playerScore + " " + "||" + " " + "Computer =" + " " + computerScore);
-} 
-
+// Takes player text as input and compares to computerSelection to play a single round of Rock, Paper, Scisscors. Adds +1 to either playerScore or computerScore depending on who wins the round
 function playRound(playerSelection, computerSelection) {
     playerSelection = prompt("Rock, Paper, or Scissors?").toUpperCase();
     computerSelection = getComputerChoice();
@@ -34,24 +30,25 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+// Runs playRound 5 times and shows the score at the end of the round in console
 function game() {
     for (let i = 0; i < 5; i++) {
         console.log(playRound());
-        console.log("Player Score = " + playerScore);
-        console.log("Computer Score = " + computerScore);
+        console.log("Score =" + " " + "Player =" + " " + playerScore + " " + "||" + " " + "Computer =" + " " + computerScore);
     }      
 }
 
+// Decides who wins by comparing playerScore to computerScore
 function finalTally() {
     if (playerScore > computerScore) {
-        console.log("You win~!~!~!");
+        console.log("You win!");
     }   else if (playerScore < computerScore){
-        console.log("You lost :(:(:(");
+        console.log("You lost :(");
     }   else {
-        console.log("Draw?!?!?!?!")
+        console.log("Draw")
     }
 }
 
 console.log(game());
-console.log(currentScore());
+
 console.log(finalTally());
