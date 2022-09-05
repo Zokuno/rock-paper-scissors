@@ -1,0 +1,14 @@
+body {
+    background-color: black;
+}
+
+.game-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+
+.game-buttons button {
+    margin: 5px;
+
+}

@@ -8,9 +8,24 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
+const clickSelection = document.addEventListener("click", (e) => {
+    let rock = document.getElementsByClassName("btn1");
+    let paper = document.getElementsByClassName("btn2");
+    let scissors = document.getElementsByClassName("btn3");
+    if (e === rock) {
+        console.log("ROCK");
+    }   else if (e === paper) {
+        console.log("PAPER");
+    }   else if (e === scissors) {
+        console.log("SCISSORS");
+    }   else {
+        console.log("Please click Rock, Paper, or Scissors");
+    }
+});
+
 // Takes player text as input and compares to computerSelection to play a single round of Rock, Paper, Scisscors. Adds +1 to either playerScore or computerScore depending on who wins the round
 function playRound(playerSelection, computerSelection) {
-    playerSelection = prompt("Rock, Paper, or Scissors?").toUpperCase();
+    playerSelection = clickSelection;
     computerSelection = getComputerChoice();
     console.log("You chose" + " " + playerSelection);
     console.log("Opponent chose" + " " + computerSelection);
@@ -49,6 +64,8 @@ function finalTally() {
     }
 }
 
-console.log(game());
 
-console.log(finalTally());
+
+// console.log(game());
+
+// console.log(finalTally());
