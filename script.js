@@ -8,30 +8,6 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-let rock = document.querySelector(".btn1");
-let paper = document.querySelector(".btn2");
-let scissors = document.querySelector(".btn3");
-
-rock.addEventListener("click", () => {
-    const playerSelection = "ROCK";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection); 
-    }
-)
-
-paper.addEventListener("click", () => {
-    const playerSelection = "PAPER";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection); 
-    }
-)
-
-scissors.addEventListener("click", () => {
-    const playerSelection = "SCISSORS";
-    const computerSelection = getComputerChoice();
-    playRound(playerSelection, computerSelection); 
-    }
-)
 
 // Takes player text as input and compares to computerSelection to play a single round of Rock, Paper, Scisscors. Adds +1 to either playerScore or computerScore depending on who wins the round
 function playRound(playerSelection, computerSelection) {
@@ -52,6 +28,33 @@ function playRound(playerSelection, computerSelection) {
         console.log("No Contest! Please type 'Rock', 'Paper', or 'Scissors'");
     }
 }
+
+let rockBtn = document.querySelector(".btn1");
+let paperBtn = document.querySelector(".btn2");
+let scissorsBtn = document.querySelector(".btn3");
+let p1Display = document.querySelector(".p1Display");
+let p2Display = document.querySelector(".p2Display");
+
+rockBtn.addEventListener("click", () => {
+    const playerSelection = "ROCK";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
+
+paperBtn.addEventListener("click", () => {
+    const playerSelection = "PAPER";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
+
+scissorsBtn.addEventListener("click", () => {
+    const playerSelection = "SCISSORS";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
 
 // Runs playRound 5 times and shows the score at the end of the round in console
 function game() {

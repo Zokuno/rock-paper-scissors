@@ -1,5 +1,16 @@
-body {
+html, body {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
     background-color: black;
+    color: whitesmoke;
+    margin: 0;
+    height: 100%;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
 }
 
 .game-buttons {
@@ -12,3 +23,21 @@ body {
     margin: 5px;
 
 }
+
+
+.results {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.resetButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .p1Display, .p2Display {
+    display: block;
+} */
