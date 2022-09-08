@@ -8,20 +8,33 @@ function getComputerChoice() {
 let playerScore = 0;
 let computerScore = 0;
 
-function clickSelection() {
-    let finalSelection = "";
-    let rock = document.querySelector(".btn1").addEventListener("click", () => {finalSelection = "ROCK"});
-    let paper = document.querySelector(".btn2").addEventListener("click", () => {finalSelection = "PAPER"});
-    let scissors = document.querySelector(".btn3").addEventListener("click", () => {finalSelection = "SCISSORS"});
-    return finalSelection;
-}
+let rock = document.querySelector(".btn1");
+let paper = document.querySelector(".btn2");
+let scissors = document.querySelector(".btn3");
 
+rock.addEventListener("click", () => {
+    const playerSelection = "ROCK";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
 
+paper.addEventListener("click", () => {
+    const playerSelection = "PAPER";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
+
+scissors.addEventListener("click", () => {
+    const playerSelection = "SCISSORS";
+    const computerSelection = getComputerChoice();
+    playRound(playerSelection, computerSelection); 
+    }
+)
 
 // Takes player text as input and compares to computerSelection to play a single round of Rock, Paper, Scisscors. Adds +1 to either playerScore or computerScore depending on who wins the round
 function playRound(playerSelection, computerSelection) {
-    playerSelection = clickSelection();
-    computerSelection = getComputerChoice();
     console.log("You chose" + " " + playerSelection);
     console.log("Opponent chose" + " " + computerSelection);
     let loser = "You Lose!" + " " + computerSelection + " " + "beats" + " " + playerSelection;
@@ -67,4 +80,4 @@ function finalTally() {
 
 // console.log(clickSelection());
 
-console.log(playRound());
+// console.log(playRound());
