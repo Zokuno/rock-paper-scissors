@@ -1,7 +1,4 @@
 html, body {
-    display: flex;
-    flex-direction: column;
-    /* justify-content: space-between; */
     background-color: black;
     color: whitesmoke;
     margin: 0;
@@ -13,31 +10,35 @@ h1 {
     justify-content: center;
 }
 
-.game-buttons {
+.gameStatus {
     display: flex;
     justify-content: center;
-    align-items: center;
+}
+
+.gameBtns {
+    display: flex;
+    justify-content: center;
 }    
 
-.game-buttons button {
+.game-buttons, button {
     margin: 5px;
-
 }
 
-
-.results {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.resetButton {
+.scoreDisplay {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 5px;
 }
 
-/* .p1Display, .p2Display {
-    display: block;
-} */
+.playerDisplay, .p1Display, .computerDisplay, .p2Display {
+    margin: 5px;
+}
+
+.resetContainer {
+    display: flex;
+    justify-content: center;
+}
+
+
+

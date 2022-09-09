@@ -1,6 +1,6 @@
 // Generates either Rock, Paper, or Scissors at random
 function getComputerChoice() {
-    const choices = ['ROCK', 'PAPER', 'SCISSORS'];
+    const choices = ['Rock', 'Paper', 'Scissors'];
     let random = Math.floor(Math.random() * choices.length);
     return choices[random];
 }
@@ -13,48 +13,62 @@ let computerScore = 0;
 function playRound(playerSelection, computerSelection) {
     console.log("You chose" + " " + playerSelection);
     console.log("Opponent chose" + " " + computerSelection);
-    let loser = "You Lose!" + " " + computerSelection + " " + "beats" + " " + playerSelection;
-    let winner = "You Win!" + " " + playerSelection + " " + "beats" + " " + computerSelection;
+    let loser = "You Lose!" + " " + computerSelection + " " + "beats" + " " + playerSelection + "!";
+    let winner = "You Win!" + " " + playerSelection + " " + "beats" + " " + computerSelection + "!";
     let draw = "Draw! No Winner";
-    if (playerSelection === 'ROCK' && computerSelection === 'PAPER' || playerSelection === 'PAPER' && computerSelection === 'SCISSORS' || playerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
+    if (playerSelection === 'Rock' && computerSelection === 'Paper' || playerSelection === 'Paper' && computerSelection === 'Scissors' || playerSelection === 'Scissors' && computerSelection === 'Rock') {
         computerScore++;
         console.log(loser);
-    }   else if (playerSelection === 'ROCK' && computerSelection === 'SCISSORS' || playerSelection === 'PAPER' && computerSelection === 'ROCK' || playerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
+        gameStatus.textContent = loser;
+    }   else if (playerSelection === 'Rock' && computerSelection === 'Scissors' || playerSelection === 'Paper' && computerSelection === 'Rock' || playerSelection ===       'Scissors' && computerSelection === 'Paper') {
         playerScore++;
         console.log(winner);
-    }   else if (playerSelection === 'ROCK' && computerSelection === 'ROCK' || playerSelection === 'PAPER' && computerSelection === 'PAPER' || playerSelection === 'SCISSORS' && computerSelection === 'SCISSORS') { 
+        gameStatus.textContent = winner;
+    }   else if (playerSelection === 'Rock' && computerSelection === 'Rock' || playerSelection === 'Paper' && computerSelection === 'Paper' || playerSelection === 'Scissors' && computerSelection === 'Scissors') { 
         console.log(draw);
+        gameStatus.textContent = draw;
     }   else  {
-        console.log("No Contest! Please type 'Rock', 'Paper', or 'Scissors'");
+        console.log("No Contest! Please click 'Rock', 'Paper', or 'Scissors'");
     }
+    p1Display.textContent = playerScore;
+    p2Display.textContent = computerScore;
 }
 
+let gameStatus = document.querySelector(".gameStatus");
 let rockBtn = document.querySelector(".btn1");
 let paperBtn = document.querySelector(".btn2");
 let scissorsBtn = document.querySelector(".btn3");
 let p1Display = document.querySelector(".p1Display");
 let p2Display = document.querySelector(".p2Display");
+let resetBtn = document.querySelector(".resetBtn")
 
 rockBtn.addEventListener("click", () => {
-    const playerSelection = "ROCK";
+    const playerSelection = "Rock";
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
-    }
+}
 )
 
 paperBtn.addEventListener("click", () => {
-    const playerSelection = "PAPER";
+    const playerSelection = "Paper";
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
-    }
+}
 )
 
 scissorsBtn.addEventListener("click", () => {
-    const playerSelection = "SCISSORS";
+    const playerSelection = "Scissors";
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
-    }
+}
 )
+
+resetBtn.addEventListener("click", () => {
+    p1Display.textContent = 0;
+    p2Display.textContent = 0;
+    gameStatus.textContent = "";
+}
+) 
 
 // Runs playRound 5 times and shows the score at the end of the round in console
 function game() {
