@@ -10,7 +10,7 @@ h1 {
     justify-content: center;
 }
 
-.gameStatus {
+.p1Choice, .p2Choice, .gameOutcome {
     display: flex;
     justify-content: center;
 }
