@@ -65,9 +65,11 @@ scissorsBtn.addEventListener("click", () => {
 )
 
 resetBtn.addEventListener("click", () => {
+    playerScore = 0;
+    computerScore = 0;
     p1Display.textContent = 0;
     p2Display.textContent = 0;
-    gameStatus.textContent = "";
+    // gameStatus.textContent = "";
 }
 ) 
 
