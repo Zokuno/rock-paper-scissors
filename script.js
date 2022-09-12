@@ -7,13 +7,13 @@ function getComputerChoice() {
 
 function computerChoiceEmoji() {
     if (getComputerChoice === "Rock") {
-        p2GameDisplay.textContent = rockEmoji;
+        p2Symbol.textContent = rockEmoji;
     }   else if (getComputerChoice === "Paper") {
-        p2GameDisplay.textContent = paperEmoji;
+        p2symbol.textContent = paperEmoji;
     }   else if (getComputerChoice === "Scissors") {
-        p2GameDisplay.textContent = scissorsEmoji;
+        p2Symbol.textContent = scissorsEmoji;
     }   else {
-        p2GameDisplay = "❔";
+        p2Symbol = "❔";
     }
 }
 
@@ -57,12 +57,12 @@ let scissorsBtn = document.querySelector(".btn3");
 let p1Display = document.querySelector(".p1Display");
 let p2Display = document.querySelector(".p2Display");
 let resetBtn = document.querySelector(".resetBtn");
-let p1GameDisplay = document.querySelector(".p1GameDisplay");
-let p2GameDisplay = document.querySelector(".p2GameDisplay");
+let p1Symbol = document.querySelector(".p1Symbol");
+let p2Symbol = document.querySelector(".p2Symbol");
 
 rockBtn.addEventListener("click", () => {
     const playerSelection = "Rock";
-    p1GameDisplay.textContent = rockEmoji;
+    p1Symbol.textContent = rockEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -70,7 +70,7 @@ rockBtn.addEventListener("click", () => {
 
 paperBtn.addEventListener("click", () => {
     const playerSelection = "Paper";
-    p1GameDisplay.textContent = paperEmoji;
+    p1Symbol.textContent = paperEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -78,7 +78,7 @@ paperBtn.addEventListener("click", () => {
 
 scissorsBtn.addEventListener("click", () => {
     const playerSelection = "Scissors";
-    p1GameDisplay.textContent = scissorsEmoji;
+    p1Symbol.textContent = scissorsEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -92,8 +92,8 @@ resetBtn.addEventListener("click", () => {
     p1Choice.textContent = "";
     p2Choice.textContent = "";
     gameOutcome.textContent = "";
-    p1GameDisplay.textContent = "❔";
-    p2GameDisplay.textContent = "❔";
+    p1Symbol.textContent = "❔";
+    p2Symbol.textContent = "❔";
 }
 ) 
 

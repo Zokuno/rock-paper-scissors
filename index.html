@@ -14,18 +14,19 @@
         <h1>Rock, Paper, Scissors</h1>
     </header>
     <main>    
-        <div class="gameStatus">
-            <div class="p1Choice"></div>
-            <div class="p2Choice"></div>
-            <div class="gameOutcome"></div>
-        </div>
 
         <div class="gameBtns"> 
             <button class="btn1">🗿<br>Rock</button>
             <button class="btn2">🧻<br>Paper</button>
             <button class="btn3">✂️<br> Scissors</button>
         </div>
-    
+
+        <div class="gameStatus">
+            <div class="p1Choice"></div>
+            <div class="p2Choice"></div>
+            <div class="gameOutcome"></div>
+        </div>
+        
         <div class="scoreDisplay">
             <span class="p1ScoreDisplay">Player: </span><span class="p1Display">0</span>
             <span class="p2ScoreDisplay">Computer: </span><span class="p2Display">0</span>
@@ -36,9 +37,15 @@
         </div>
 
         <div class="gameDisplay">
-            <span class="p1GameDisplay">❔</span>
+            <div class="p1Display">
+                <div class="p1Name">Player 1</div>
+                <span class="p1Symbol">❔</span>
+            </div>
             <span class="vs">VS</span>
-            <span class="p2GameDisplay">❔</span>
+            <div class="p2Display">
+                <div class="p2Name">Player 2</div>
+                <span class="p2Symbol">❔</span>
+            </div>
         </div>
     </main>
     <footer>
