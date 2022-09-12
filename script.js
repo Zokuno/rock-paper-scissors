@@ -5,6 +5,18 @@ function getComputerChoice() {
     return choices[random];
 }
 
+function computerChoiceEmoji() {
+    if (getComputerChoice === "Rock") {
+        p2GameDisplay.textContent = rockEmoji;
+    }   else if (getComputerChoice === "Paper") {
+        p2GameDisplay.textContent = paperEmoji;
+    }   else if (getComputerChoice === "Scissors") {
+        p2GameDisplay.textContent = scissorsEmoji;
+    }   else {
+        p2GameDisplay = "❔";
+    }
+}
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -33,6 +45,9 @@ function playRound(playerSelection, computerSelection) {
     p2Display.textContent = computerScore;
 }
 
+let rockEmoji = "🗿";
+let paperEmoji = "🧻";
+let scissorsEmoji = "✂️";
 let p1Choice = document.querySelector(".p1Choice");
 let p2Choice = document.querySelector(".p2Choice");
 let gameOutcome = document.querySelector(".gameOutcome");
@@ -41,10 +56,13 @@ let paperBtn = document.querySelector(".btn2");
 let scissorsBtn = document.querySelector(".btn3");
 let p1Display = document.querySelector(".p1Display");
 let p2Display = document.querySelector(".p2Display");
-let resetBtn = document.querySelector(".resetBtn")
+let resetBtn = document.querySelector(".resetBtn");
+let p1GameDisplay = document.querySelector(".p1GameDisplay");
+let p2GameDisplay = document.querySelector(".p2GameDisplay");
 
 rockBtn.addEventListener("click", () => {
     const playerSelection = "Rock";
+    p1GameDisplay.textContent = rockEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -52,6 +70,7 @@ rockBtn.addEventListener("click", () => {
 
 paperBtn.addEventListener("click", () => {
     const playerSelection = "Paper";
+    p1GameDisplay.textContent = paperEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -59,6 +78,7 @@ paperBtn.addEventListener("click", () => {
 
 scissorsBtn.addEventListener("click", () => {
     const playerSelection = "Scissors";
+    p1GameDisplay.textContent = scissorsEmoji;
     const computerSelection = getComputerChoice();
     playRound(playerSelection, computerSelection); 
 }
@@ -69,7 +89,11 @@ resetBtn.addEventListener("click", () => {
     computerScore = 0;
     p1Display.textContent = 0;
     p2Display.textContent = 0;
-    // gameStatus.textContent = "";
+    p1Choice.textContent = "";
+    p2Choice.textContent = "";
+    gameOutcome.textContent = "";
+    p1GameDisplay.textContent = "❔";
+    p2GameDisplay.textContent = "❔";
 }
 ) 
 

@@ -13,6 +13,7 @@ h1 {
 
 main {
     background-color: slategrey;
+    min-height: 800px;
 }
 
 .p1Choice, .p2Choice, .gameOutcome {
@@ -32,8 +33,11 @@ main {
     justify-content: center;
 }    
 
-.game-buttons, button {
+.gameBtns button {
     margin: 5px;
+    font-size: 30px;
+    min-width: 130px;
+    min-height: 80px;
 }
 
 .scoreDisplay {
@@ -43,13 +47,34 @@ main {
     margin: 5px;
 }
 
-.playerDisplay, .p1Display, .computerDisplay, .p2Display {
+.p1ScoreDisplay, .p1Display, .p2ScoreDisplay, .p2Display {
     margin: 5px;
 }
 
 .resetContainer {
     display: flex;
     justify-content: center;
+}
+
+.gameDisplay {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 400px;
+}
+
+/* .p1GameDisplay, .p2GameDisplay {
+    min-width: 532px;
+} */
+
+.vs {
+    font-size: 200px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 
