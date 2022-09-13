@@ -4,7 +4,7 @@ This is my first major project in my coding journey and I'm pretty happy with ho
 
 I made this as part of 'The Odin Project' online Foundations course, the instructions were to create a functioning rock, paper, scissors game where after 5 rounds it announces a winner - I didn't do that. I got wrapped up in making things looking nice and getting the core game functions working; the result? A never ending game of rock, paper, scissors. 
 
-At some point I intend on coming back and making the code look nicer as I'm aware it's not necessarily beautiful code. Some sections of code exists because I simply don't have the knowledge currently to streamline it, others because it just works and I'd rather continue learning.
+At some point I intend on coming back and making the code look nicer as I'm aware it's not necessarily beautiful code. There are sections of clunky code that exist because I simply don't have the knowledge to streamline it, others because it just works and I'd rather continue learning.
 
 FUTURE FEATURES
 - Play 5 rounds and announce a winner, but why stop there? I'd like something akin to a drop down menu "round amount" selector, or the user could input the amount of rounds they want to play.
