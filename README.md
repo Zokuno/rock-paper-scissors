@@ -1,4 +1,5 @@
 THOUGHTS
+
 This is my first major project in my coding journey and I'm pretty happy with how it turned out - it's also my first README entry!
 
 I made this as part of 'The Odin Project' online Foundations course, the instructions were to create a functioning rock, paper, scissors game where after 5 rounds it announces a winner - I didn't do that. I got wrapped up in making things looking nice and getting the core game functions working; the result? A never ending game of rock, paper, scissors. 
