@@ -5,21 +5,8 @@ function getComputerChoice() {
     return choices[random];
 }
 
-function computerChoiceEmoji() {
-    if (getComputerChoice === "Rock") {
-        p2Symbol.textContent = rockEmoji;
-    }   else if (getComputerChoice === "Paper") {
-        p2symbol.textContent = paperEmoji;
-    }   else if (getComputerChoice === "Scissors") {
-        p2Symbol.textContent = scissorsEmoji;
-    }   else {
-        p2Symbol = "❔";
-    }
-}
-
 let playerScore = 0;
 let computerScore = 0;
-
 
 // Takes player text as input and compares to computerSelection to play a single round of Rock, Paper, Scisscors. Adds +1 to either playerScore or computerScore depending on who wins the round
 function playRound(playerSelection, computerSelection) {
@@ -64,6 +51,15 @@ rockBtn.addEventListener("click", () => {
     const playerSelection = "Rock";
     p1Symbol.textContent = rockEmoji;
     const computerSelection = getComputerChoice();
+    if (computerSelection === "Rock") {
+        p2Symbol.textContent = rockEmoji;
+    }   else if (computerSelection === "Paper") {
+        p2Symbol.textContent = paperEmoji;
+    }   else if (computerSelection === "Scissors") {
+        p2Symbol.textContent = scissorsEmoji;
+    }   else {
+        p2Symbol = "❔";
+    }
     playRound(playerSelection, computerSelection); 
 }
 )
@@ -72,6 +68,15 @@ paperBtn.addEventListener("click", () => {
     const playerSelection = "Paper";
     p1Symbol.textContent = paperEmoji;
     const computerSelection = getComputerChoice();
+    if (computerSelection === "Rock") {
+        p2Symbol.textContent = rockEmoji;
+    }   else if (computerSelection === "Paper") {
+        p2Symbol.textContent = paperEmoji;
+    }   else if (computerSelection === "Scissors") {
+        p2Symbol.textContent = scissorsEmoji;
+    }   else {
+        p2Symbol = "❔";
+    }
     playRound(playerSelection, computerSelection); 
 }
 )
@@ -80,6 +85,15 @@ scissorsBtn.addEventListener("click", () => {
     const playerSelection = "Scissors";
     p1Symbol.textContent = scissorsEmoji;
     const computerSelection = getComputerChoice();
+    if (computerSelection === "Rock") {
+        p2Symbol.textContent = rockEmoji;
+    }   else if (computerSelection === "Paper") {
+        p2Symbol.textContent = paperEmoji;
+    }   else if (computerSelection === "Scissors") {
+        p2Symbol.textContent = scissorsEmoji;
+    }   else {
+        p2Symbol = "❔";
+    }
     playRound(playerSelection, computerSelection); 
 }
 )
@@ -115,13 +129,3 @@ function finalTally() {
         console.log("Draw")
     }
 }
-
-
-
-// console.log(game());
-
-// console.log(finalTally());
-
-// console.log(clickSelection());
-
-// console.log(playRound());
